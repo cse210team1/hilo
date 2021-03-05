@@ -18,6 +18,8 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
+        print(f"Your score is: {self.score} ")
+        print(f"The card is : {self.dealer.current_card}" )
         while self.keep_playing:
             self.get_inputs()
             self.do_updates()
@@ -25,8 +27,7 @@ class Director:
 
     def get_inputs(self):
 
-        print(f"The card is : {self.dealer.current_card}" )
-        self.higher_lower = input("Higher or lower? [h/l] ")
+        self.higher_lower = input("Will the next card be higher or lower? [h/l] ")
         
         
     def do_updates(self):
@@ -38,6 +39,7 @@ class Director:
             self.score -= 75
 
     def do_outputs(self):
+        print(f"The card is : {self.dealer.current_card}" )
         print(f"Your score is: {self.score} ")
 
         if self.score > 0:
@@ -45,4 +47,4 @@ class Director:
             self.keep_playing = (choice == "y")
         else: 
             print("You lose")
-            self.keep_playing == False
+            self.keep_playing = False
