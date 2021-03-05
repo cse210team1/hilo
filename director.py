@@ -31,11 +31,10 @@ class Director:
         
     def do_updates(self):
         self.dealer.deal_card()
-        
-        if self.higher_lower == self.dealer.compare_to_last_card:
+        if self.higher_lower == self.dealer.compare_to_last_card():
             self.score += 100
         else:
-            self.score -= 75
+            self.score += -75
 
     def do_outputs(self):
         print(f"Your score is: {self.score} ")
